@@ -21,7 +21,7 @@ passport.use(new GoogleStrategy({
         return cb(null, user);
       } else {
         // we have a new student!
-        const newUser = new Student({
+        const newUser = new User({
           name: profile.displayName,
           email: profile.emails[0].value,
           googleId: profile.id
