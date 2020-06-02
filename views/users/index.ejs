@@ -13,26 +13,28 @@
 </head>
 
 <body>
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-       
-        <a href="users/asks/new">Ask</a>
-        <ul class="right">
-          <li>
+          <form action="/asks/search" method="POST">
+            <input id="search" type="text" name="name" placeholder="search name" value="" autocomplete="off">
+            <button type="submit">Search</button>
+          </form>
+          <input id="search" type="search" name="title" placeholder="search name" value="<%= title %>" autocomplete="off">
+            
+            </div>
           <% if (user) { %>
+            <a href="asks/new">Askvevwewew</a>
             <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
           <% } else { %>
             <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
           <% } %>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+        
+          <% asks.forEach(element => { %>
+            <p><%=element.title%></p><a href="/asks/<%= element._id %>">DETAILS</a>
+          <% }); %> 
+          <div class="input-field">
+         
+</body>
   
 
-
-</body>
+      
 
 </html>
