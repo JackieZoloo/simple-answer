@@ -13,24 +13,29 @@
 </head>
 
 <body>
-          <form action="/asks/search" method="POST">
+  <nav>
+    <h1>logo</h1>
+          <form action="/questions/search" method="POST">
             <input id="search" type="text" name="name" placeholder="search name" value="" autocomplete="off">
             <button type="submit">Search</button>
           </form>
-          <input id="search" type="search" name="title" placeholder="search name" value="<%= title %>" autocomplete="off">
-            
-            </div>
-          <% if (user) { %>
-            <a href="asks/new">Askvevwewew</a>
-            <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-          <% } else { %>
-            <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-          <% } %>
+          <a href="/questions/new" class="ask">Askvevwewew</a>
+            <% if (user) { %>
+              <a href="/logout">Log Out</a>
+            <% } else { %>
+              <a href="/auth/google">Login with Google</a>
+            <% } %>
+ </nav>
+ <input id="search" type="search" name="title" placeholder="search name" value="<%= title %>" autocomplete="off">
         
-          <% asks.forEach(element => { %>
-            <p><%=element.title%></p><a href="/asks/<%= element._id %>">DETAILS</a>
+          <% questions.forEach(element => { %>
+            <h4><%=element.title%></h4>
+            <a href="/questions/<%= element._id %>">DETAILS</a>
+            <form action="/users/<%= element._id%>?_method=DELETE" method="POST">
+              <input type="submit" value="DELETE">
+            </form>
           <% }); %> 
-          <div class="input-field">
+          
          
 </body>
   

@@ -1,19 +1,18 @@
-const Ask = require("../models/userQuestion");
+const Question = require("../models/question");
 const User = require("../models/user");
 
 module.exports = {
-
-    new: newAsk,
+    new: newQuestion,
     create,
     search,
-    show
-
- 
-
+    show,
+    deleteOne
 };
-// MyModel.find({ name: /john/i }, 'name friends', function (err, docs) { })
-// newUser.find({ name: { $regex: "s", $options: "i" } }, function(err, docs)
-
+    function deleteOne(req, res) {
+        Question.findByIdAndRemove(req.params.id, function(err) {
+            res.redirect("/users");
+        })
+    }
 
     function search(req, res) {
         console.log(req.body,  "this is req body ---------");
@@ -21,7 +20,7 @@ module.exports = {
         let modelQuery = req.query.title ? {title: new RegExp(req.query.title, 'i')} : {};
         let sortKey = req.query.sort || 'title';
 
-        Ask.find({title: {$regex: `${query}`, $options: "i"}}, function(err, asks){
+        Question.find({title: {$regex: `${query}`, $options: "i"}}, function(err, questions){
             User.find(modelQuery)
             .sort(sortKey).exec(function(err, users) {
               if (err) return next(err);
@@ -31,50 +30,31 @@ module.exports = {
                 user: req.user,
                 title: req.query.title, 
                 sortKey,
-                asks
+                questions
           
               });
             })
             });
         }
-   
-    
-  
-
-
-
-
-
-
-
 
    function show(req, res) {
-       Ask.findById(req.params.id, function(err, ask){
-           res.render("users/show", {ask});
-
-
+       Question.findById(req.params.id, function(err, question){
+           res.render("users/show", {question});
        })
    }
    
-   function newAsk(req, res) {
+   function newQuestion(req, res) {
     res.render("users/new", { title: "asks"});
     }
 
-
   function create(req, res) {
-    const ask = new Ask(req.body);
-    ask.save(function (err, newAsk) {
-        console.log(newAsk);
-        if(err) return res.redirect("/ask/new");
+    const question = new Question(req.body);
+    question.save(function (err, newQuestion) {
+        console.log(newQuestion);
+        if(err) return res.redirect("/questions/new");
         res.redirect("/users");
     })
   }
-//   function index(req, res) {
-//     Ask.find({}, function(err, asks) {
-//         console.log(asks);
-//       res.render('/users/index', { asks });
-//     });
-//   }
 
 
  

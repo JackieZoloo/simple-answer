@@ -7,5 +7,28 @@
 </head>
 <body>
     <h1>hello</h1>
+    <h1><%= question.title%></h1>
+    <h2><%= question.question%></h2>
+    <p><%= question.difficult%></p>
+    <code><%= question.code%></code>
+
+    <p id="counter">Loading button click data.</p>
+    <button id="myButton">Click me!</button>
+
+    <% question.answer.forEach(function(a) { %>
+        <p><%= a.content %></p>
+        <code><%= a.code %></code>
+    <% }) %>
+    <form method="POST"  action="/questions/<%= question._id %>/answer">
+        <label>Answer</label>
+        <textarea name="content">
+
+        </textarea>
+        <label>Solution Code</label>
+        <textarea name="code">
+
+        </textarea>
+        <input type="submit" value="asnwer">
+    </form>
 </body>
 </html>

@@ -18,7 +18,8 @@ require('./config/passport');
 
 var indexRoutes = require('./routes/index');
 var usersRoutes = require('./routes/users');
-var asksRoutes = require("./routes/asks");
+var questionsRoutes = require("./routes/questions");
+var answerRoutes = require("./routes/answers");
 
 var app = express();
 
@@ -42,7 +43,8 @@ app.use(passport.session());
 
 app.use('/', indexRoutes);
 app.use('/', usersRoutes);
-app.use("/asks", asksRoutes);
+app.use('/questions', questionsRoutes);
+app.use('/', answerRoutes);
 
 
 // catch 404 and forward to error handler

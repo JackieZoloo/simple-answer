@@ -1,5 +1,5 @@
 const User = require('../models/user');
-const Ask = require("../models/userQuestion");
+const Question = require("../models/question");
 
 module.exports = {
   index,
@@ -13,7 +13,7 @@ function index(req, res, next) {
   let modelQuery = req.query.title ? {title: new RegExp(req.query.title, 'i')} : {};
   // Default to sorting by name
   let sortKey = req.query.sort || 'title';
-  Ask.find({}, function(err, asks){
+  Question.find({}, function(err, questions){
   User.find(modelQuery)
   .sort(sortKey).exec(function(err, users) {
     if (err) return next(err);
@@ -23,7 +23,7 @@ function index(req, res, next) {
       user: req.user,
       title: req.query.title, 
       sortKey,
-      asks
+      questions
 
     });
   })
