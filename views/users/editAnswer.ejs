@@ -6,6 +6,17 @@
     <title>Document</title>
 </head>
 <body>
+    <form method="POST"  action="/questions/<%= question._id %>/answer">
+        <label>Answer</label>
+        <textarea name="content">
+
+        </textarea>
+        <label>Solution Code</label>
+        <textarea name="code">
+
+        </textarea>
+        <input type="submit" value="asnwer">
+    </form>
     
 </body>
 </html>

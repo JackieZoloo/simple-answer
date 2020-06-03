@@ -14,10 +14,9 @@ function editQuestion(req, res) {
     res.render('users/edit', {question});
   })
 }
-
 function update(req, res) {
   Question.findById(req.params.id, function(err, question) {
-    res.render('users/show', {question});
+    res.render('/users/edit', {question});
   })
 }
 function deleteOne(req, res) {

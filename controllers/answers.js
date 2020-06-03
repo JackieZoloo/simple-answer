@@ -1,9 +1,15 @@
 const Question = require("../models/question");
 
 module.exports = {
-    create
-};
+    create,
+    editAnswer
 
+};
+function editAnswer(req, res) {
+    Question.findById(req.params.id, function(err, question) {
+      res.render('users/answerEdit', {question});
+    })
+  }
 function create(req, res) {
     console.log('I dont knooooow');
     Question.findById(req.params.id, function(err, question) {
