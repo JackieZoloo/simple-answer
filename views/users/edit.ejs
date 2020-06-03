@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form class="askForm" action="/questions/<%=question._id%>/edit?_method=PUT" method="POST">
+    <form class="askForm" action="/questions/<%=question._id%>?_method=PUT" method="POST">
         <label>Qeustion:</label>
         <input type="text" name="title" value="<%= question.title%>">
         <label>Select Difficulty:</label>

@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Users</title>
-  <!-- Google Icon Fonts used by Materialize -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Materialize CSS Framework -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="stylesheets/style.css" />
-  <!-- JavaScript for Materialize -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</head>
-<body>
+<%- include("../partials/header.ejs") %>
   <nav>
     <h1>logo</h1>
           <form action="/users" method="GET">
@@ -32,5 +19,4 @@
               <input type="submit" value="DELETE">
             </form>
           <% }); %>  
-</body>
-</html>
+<%- include('../partials/footer.ejs') %>

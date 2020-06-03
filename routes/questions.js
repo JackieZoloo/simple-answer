@@ -7,7 +7,7 @@ router.post('/', questionsCtrl.create);
 router.get('/:id', questionsCtrl.show);
 router.delete('/:deleteOneId/', questionsCtrl.deleteOne);
 router.get('/:id/edit', questionsCtrl.editQuestion);
-router.put('/:id/edit', questionsCtrl.update);
+router.put('/:id', questionsCtrl.update);
 
 
 
