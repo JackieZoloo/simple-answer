@@ -45,7 +45,7 @@ app.use(passport.session());
 
 app.use('/', indexRoutes);
 app.use('/', usersRoutes);
-app.use('/questions/', questionsRoutes);
+app.use('/questions', questionsRoutes);
 app.use('/', answerRoutes);
 
 

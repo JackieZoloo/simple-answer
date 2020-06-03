@@ -15,8 +15,8 @@ function editQuestion(req, res) {
   })
 }
 function update(req, res) {
-  Question.findById(req.params.id, function(err, question) {
-    res.render('/users/edit', {question});
+  Question.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, question) {
+    res.redirect(`/questions/${question._id}`)
   })
 }
 function deleteOne(req, res) {

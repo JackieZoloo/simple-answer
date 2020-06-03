@@ -3,7 +3,7 @@ const router = express.Router();
 const answerCtrl = require('../controllers/answers');
 
 router.post('/questions/:id/answer', answerCtrl.create);
-router.get('/questions/:id/edit', answerCtrl.editAnswer);
+router.get('/:id/edit', answerCtrl.editAnswer);
 
 module.exports = router;
 
