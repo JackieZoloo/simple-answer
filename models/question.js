@@ -17,6 +17,7 @@ const questionSchema = new Schema ({
     question: String,
     difficult: String,
     code: String,
+    likes: Number,
     answer: [answerSchema],
     user: {
         type: Schema.Types.ObjectId,

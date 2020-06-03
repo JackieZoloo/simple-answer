@@ -7,19 +7,20 @@ module.exports = {
 };
 
 function index(req, res, next) {
-  console.log(req.query)
+  console.log(req.query);
+  const query = req.query.name ? req.query.name : '';
   // Make the query object to use with User.find based up
   // the user has submitted the search form or now
   let modelQuery = req.query.title ? {title: new RegExp(req.query.title, 'i')} : {};
   // Default to sorting by name
   let sortKey = req.query.sort || 'title';
-  Question.find({}, function(err, questions){
-  User.find(modelQuery)
-  .sort(sortKey).exec(function(err, users) {
+  Question.find({title: {$regex: query, $options: "i"}}, function(err, questions){
+  // User.find(modelQuery)
+  // .sort(sortKey).exec(function(err, users) {
     if (err) return next(err);
     // Passing search values, name & sortKey, for use in the EJS
     res.render('users/index', { 
-      users, 
+      // users, 
       user: req.user,
       title: req.query.title, 
       sortKey,
@@ -27,8 +28,8 @@ function index(req, res, next) {
 
     });
   })
-  });
-}
+  };
+
 
 
 

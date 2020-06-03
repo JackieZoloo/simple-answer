@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets/style.css">
     <title>Document</title>
 </head>
 <body>
-    <a href="/users">Home</a>
-    <h1 class="test">Hello</h1>
-    <form class="askForm" action="/questions" method="POST">
+    <form class="askForm" action="/questions/<%=question._id%>/edit?_method=PUT" method="POST">
         <label>Qeustion:</label>
-        <input type="text" name="title" placeholder="question">
+        <input type="text" name="title" value="<%= question.title%>">
         <label>Select Difficulty:</label>
-        <select name="difficult">
-          <option value="hard">HARD</option>
+        <select name="difficult" value="<%= question.difficult%>">
           <option value="medium">MEDIUM</option>
           <option value="basic">EASY</option>
+          <option value="hard">HARD</option>
         </select>
         <label>Describe your question:</label>
-          <textarea  name="question">
+          <textarea  name="question" >
+            <%= question.question%>
   
           </textarea>
           <label>Write your code:</label>
           <textarea  name="code" rows="4" cols="50">
+            <%= question.code%>
   
           </textarea>
-        <input type="submit" value="ask" >
+        <input type="submit" value="finish" >
       </form>
 </body>
 </html>
