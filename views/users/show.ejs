@@ -3,31 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/showStyle.css">
     <title>Document</title>
 </head>
 <body>
-    <a href="/users">Home</a>
-    <h1>hello</h1>
-    <h1><%= question.title%></h1>
-    <h2><%= question.question%></h2>
-    <p><%= question.difficult%></p>
-    <code><%= question.code%></code>
-    <a href="/questions/<%= question._id %>/edit">Edit</a>
-    <% question.answer.forEach(function(a) { %>
-        <p><%= a.content %></p>
-        <code><%= a.code %></code>
-        <a href="/questions/<%= question._id %>/answerEdit/<%= a._id%>">Edit</a>
-    <% }) %>
-    <form method="POST"  action="/questions/<%= question._id %>/answer">
-        <label>Answer</label>
-        <textarea name="content">
-
-        </textarea>
-        <label>Solution Code</label>
-        <textarea name="code">
-
-        </textarea>
-        <input type="submit" value="asnwer">
-    </form>
+    <div class="container">
+        <div class="question">
+            <a href="/users">Back</a>
+            <h1><%= question.title%></h1>
+            <h2><%= question.question%></h2>
+            <p><%= question.difficult%></p>
+            <code><%= question.code%></code>
+            <a href="/questions/<%= question._id %>/edit">Edit</a>
+        </div>
+        
+        <% question.answer.forEach(function(a) { %>
+            <div class="answer">
+                <p><%= a.content %></p>
+                <code><%= a.code %></code>
+                <a href="/questions/<%= question._id %>/answerEdit/<%= a._id%>">Edit</a>
+            </div> 
+        <% }) %>
+        <form class="form" method="POST"  action="/questions/<%= question._id %>/answer">
+            <div class="answers">
+                <h4>Your answer</h4>
+                <label>Answer</label>
+                <textarea class="text" name="content">
+                </textarea>
+            </div>
+            <div>
+                <label>Solution Code</label>
+                <textarea class="text" name="code">
+                </textarea>
+                <input type="submit" value="asnwer">
+            </div>
+        </form>
+  </div>
 </body>
 </html>

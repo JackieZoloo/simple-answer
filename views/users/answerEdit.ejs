@@ -6,22 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <form class="askForm" method="POST"> 
+    <form class="askForm" action="/questions/<%=question._id%>/answer?_method=PUT" method="POST"> 
        <label>Answer:</label>
-       
-           
-     
-          <textarea  name="question" >
+          <textarea  name="content">
             <%= foundA.content %>
-  
           </textarea>
           <label>Solution code:</label>
           <textarea  name="code" rows="4" cols="50">
             <%= foundA.code%>
-  
           </textarea>
         <input type="submit" value="finish" >
-      ]
       </form>
     
 </body>

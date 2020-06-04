@@ -1,0 +1,27 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  .container {
+      width: 800px;
+      margin: 0 auto;
+  }
+  .question {
+      border: solid 1px gray;
+      margin-bottom: 50px;
+      padding: 20px;
+  }
+  .answer {
+      border: solid 1px gray;
+      padding: 20px;
+  }
+  .text {
+    width: 500px;
+    height: 300px;
+  }
+  .form {
+      border: solid 1px black;
+      margin-top: 20px;
+  }
+  .answers {
+      margin: 0 auto;
+  }

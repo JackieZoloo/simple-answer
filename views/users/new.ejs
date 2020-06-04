@@ -3,30 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/questionStyle.css">
     <title>Document</title>
 </head>
 <body>
-    <a href="/users">Home</a>
-    <h1 class="test">Hello</h1>
+    <a href="/users">Back</a>
+    <h1 class="test">Ask Your Question</h1>
     <form class="askForm" action="/questions" method="POST">
-        <label>Qeustion:</label>
-        <input type="text" name="title" placeholder="question">
-        <label>Select Difficulty:</label>
-        <select name="difficult">
-          <option value="hard">HARD</option>
-          <option value="medium">MEDIUM</option>
-          <option value="basic">EASY</option>
-        </select>
-        <label>Describe your question:</label>
-          <textarea  name="question">
-  
-          </textarea>
+        <div class="question">
+            <label>Qeustion:</label>
+            <input class="inputQ" type="text" name="title" placeholder="question">
+        </div> 
+        <div class="select">
+            <label>Select Difficulty:</label>
+            <select name="difficult">
+            <option value="hard">HARD</option>
+            <option value="medium">MEDIUM</option>
+            <option value="basic">EASY</option>
+            </select>
+        </div>
+        <div class="describe">
+          <label>Describe your question:</label>
+            <textarea  name="question">
+            </textarea>
+        </div>
+        <div class="describe">
           <label>Write your code:</label>
           <textarea  name="code" rows="4" cols="50">
-  
           </textarea>
-        <input type="submit" value="ask" >
+          <input class="ask" type="submit" value="ask" >
+        </div>
+        
       </form>
 </body>
 </html>

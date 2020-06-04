@@ -19,13 +19,19 @@
  <main>
    <div class="sectionOne">
           <% questions.forEach(element => { %>
-            <div class="question">
-            <h4><%=element.title%></h4>
-            <a href="/questions/<%= element._id %>">DETAILS</a>
+        <div class="question">
+          <div class="answerNumber">
+            <h5 class="number"><%=element.answer.length%></h5>
+            <p>asnwer</p>
+          </div>
+          <h5 class="title"><%=element.title%></h5>
+          <div class="buttons">
+            <a class="details" href="/questions/<%= element._id %>">DETAILS</a>
             <form action="/questions/<%= element._id%>?_method=DELETE" method="POST">
               <input type="submit" value="DELETE">
             </form>
           </div>
+       </div>
           <% }); %> 
     </div>
     <div class="sectionTwo">

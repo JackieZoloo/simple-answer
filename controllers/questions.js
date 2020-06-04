@@ -12,7 +12,9 @@ module.exports = {
     updateAnswer
 };
 function updateAnswer(req, res) {
-  Question.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, question) {
+  console.log(req.body, "this saaaa");
+  Question.findByIdAndUpdate(req.params.id, {$set: {answer: req.body}}, {new: true}, function(err, question) {
+    console.log(err, question);
     res.redirect(`/questions/${question._id}`)
   })
 }
