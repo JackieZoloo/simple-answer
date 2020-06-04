@@ -7,8 +7,22 @@ module.exports = {
     show,
     deleteOne,
     update,
-    editQuestion
+    editQuestion,
+    editAnswer,
+    updateAnswer
 };
+function updateAnswer(req, res) {
+  Question.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, question) {
+    res.redirect(`/questions/${question._id}`)
+  })
+}
+function editAnswer(req, res) {
+  Question.findById(req.params.id, function(err, question) {
+    const foundA = question.answer.id(req.params.aId)
+    res.render('users/answerEdit', {question, foundA });
+  })
+}
+
 function editQuestion(req, res) {
   Question.findById(req.params.id, function(err, question) {
     res.render('users/edit', {question});

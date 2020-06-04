@@ -2,8 +2,12 @@
   <nav>
     <img class="logo" src="/images/logo.svg">
           <form class="search" action="/users" method="GET">
-            <input id="search" type="text" name="name" placeholder="search name" value="" autocomplete="off">
-            <button type="submit">Search</button>
+            <div class="input">
+            <input id="search" type="text" name="name" placeholder="search" value="" autocomplete="off">
+          </div>
+          <div>
+            <input type="submit" value="search">
+          </div>
           </form>
           <a href="/questions/new" class="ask">Ask</a>
             <% if (user) { %>
@@ -12,11 +16,21 @@
               <a class="login" href="/auth/google">Login with Google</a>
             <% } %>
  </nav>
+ <main>
+   <div class="sectionOne">
           <% questions.forEach(element => { %>
+            <div class="question">
             <h4><%=element.title%></h4>
             <a href="/questions/<%= element._id %>">DETAILS</a>
             <form action="/questions/<%= element._id%>?_method=DELETE" method="POST">
               <input type="submit" value="DELETE">
             </form>
-          <% }); %>  
+          </div>
+          <% }); %> 
+    </div>
+    <div class="sectionTwo">
+      <img class="sideOne sideImg" src="/images/sideOne.png">
+      <img class="sideTwo sideImg" src="/images/sideTwo.png">
+    </div>
+ </main> 
 <%- include('../partials/footer.ejs') %>

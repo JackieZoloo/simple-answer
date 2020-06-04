@@ -6,7 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello</h1>
+    <form class="askForm" method="POST"> 
+       <label>Answer:</label>
+       
+           
+     
+          <textarea  name="question" >
+            <%= foundA.content %>
+  
+          </textarea>
+          <label>Solution code:</label>
+          <textarea  name="code" rows="4" cols="50">
+            <%= foundA.code%>
+  
+          </textarea>
+        <input type="submit" value="finish" >
+      ]
+      </form>
     
 </body>
 </html>

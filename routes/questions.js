@@ -8,7 +8,8 @@ router.get('/:id', questionsCtrl.show);
 router.delete('/:deleteOneId/', questionsCtrl.deleteOne);
 router.get('/:id/edit', questionsCtrl.editQuestion);
 router.put('/:id', questionsCtrl.update);
-
+router.get('/:id/answerEdit/:aId', questionsCtrl.editAnswer);
+router.put('/questions/:id', questionsCtrl.updateAnswer);
 
 
 module.exports = router;

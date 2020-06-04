@@ -9,34 +9,65 @@ body {
 }
 nav {
   width: 100%;
-  height: 200px;
-  background-color: blue;
-  border: solid 2px red;
+  height: 160px;
+  background-color: rgb(233, 233, 233);
   display: flex;
-  justify-content: start; 
+  justify-content: space-between; 
   align-items: center; 
+}
+.search {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  flex-grow: 3;
+}
+.input {
+  width: 400px;
 }
 .logo {
   height: 100px;
   width: 200px;
   margin-left: 10px;
-
+  flex-grow: 1;
 }
 .ask {
-  background-color: #255E69;
+  background-color: rgb(246, 246, 246);
   border-radius: 10px;
-  width: 100px;
+  width: 50px;
   height: 40px;
   display:flex;
   justify-content: center; 
   align-items: center; 
+  flex-grow: 1;
+  margin-right: 10px;
+  color: black;
 }
 .login {
-  background-color: #255E69;
-  width: 150px;
+  background-color: rgb(246, 246, 246);
+  width: 120px;
   height: 40px;
   border-radius: 10px;
   display:flex;
   justify-content: center; 
-  align-items: center; 
+  align-items: center;
+  flex-grow: 1; 
+  color: black;
 }
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+.question {
+  border: solid 2px red;
+}
+.sectionOne {
+  flex-grow: 5;
+}
+.sectionTwo {
+  flex-grow: 2;
+  width: 300px;
+}
+.sideImg {
+  width: 300px;
+}
+
