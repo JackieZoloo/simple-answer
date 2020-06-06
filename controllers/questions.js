@@ -52,11 +52,12 @@ function newQuestion(req, res) {
 }
 
 function create(req, res) {
-const question = new Question(req.body);
-question.save(function (err, newQuestion) {
-    console.log(newQuestion);
-    if(err) return res.redirect('/questions/new');
-    res.redirect('/users');
+    const question = new Question(req.body);
+    question.user = req.user._id;
+    question.save(function (err, newQuestion) {
+        console.log(newQuestion);
+        if(err) return res.redirect('/questions/new');
+        res.redirect('/users');
 })
 }
 

@@ -6,6 +6,7 @@
       text-align: center;
   }
  form {
+     background-color: rgb(233, 233, 233);
      width: 700px;
      border: solid 2px black;
      margin: 0 auto;
@@ -42,5 +43,8 @@
     width: 80px;
     height: 40px;
     font-size: 18px;
+}
+label {
+    margin: 20px;
 }
  

@@ -5,15 +5,23 @@
       width: 800px;
       margin: 0 auto;
   }
-  .question {
+  .question , .answer {
+      background-color: rgb(233, 233, 233);
       border: solid 1px gray;
       margin-bottom: 50px;
       padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column;
+      padding: 30px;
   }
-  .answer {
-      border: solid 1px gray;
+  .questionContent {
+      border: solid 1px black;
       padding: 20px;
+      background-color: white;
   }
+
   .text {
     width: 500px;
     height: 300px;
@@ -23,5 +31,15 @@
       margin-top: 20px;
   }
   .answers {
+    background-color: rgb(233, 233, 233);
       margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column;
+      padding: 30px;
   }
+  .answerBottun {
+      margin: 20px;
+  }
+  

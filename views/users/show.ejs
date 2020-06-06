@@ -11,31 +11,32 @@
         <div class="question">
             <a href="/users">Back</a>
             <h1><%= question.title%></h1>
-            <h2><%= question.question%></h2>
+            <h2 class="questionContent"><%= question.question%></h2>
             <p><%= question.difficult%></p>
-            <code><%= question.code%></code>
+            <code class="questionContent"><%= question.code%></code>
             <a href="/questions/<%= question._id %>/edit">Edit</a>
         </div>
         
         <% question.answer.forEach(function(a) { %>
             <div class="answer">
-                <p><%= a.content %></p>
-                <code><%= a.code %></code>
+                <h3>Answer</h3>
+                <p class="questionContent"><%= a.content %></p>
+                <code class="questionContent"><%= a.code %></code>
                 <a href="/questions/<%= question._id %>/answerEdit/<%= a._id%>">Edit</a>
             </div> 
         <% }) %>
         <form class="form" method="POST"  action="/questions/<%= question._id %>/answer">
             <div class="answers">
-                <h4>Your answer</h4>
-                <label>Answer</label>
+                <h2>Your answer</h2>
+                <h4>Answer</h4>
                 <textarea class="text" name="content">
                 </textarea>
             </div>
-            <div>
-                <label>Solution Code</label>
+            <div class="answers">
+                <h4>Solution Code</h4>
                 <textarea class="text" name="code">
                 </textarea>
-                <input type="submit" value="asnwer">
+                <input class="answerBottun" type="submit" value="asnwer">
             </div>
         </form>
   </div>
