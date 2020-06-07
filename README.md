@@ -1,13 +1,14 @@
 # simple-answer
-description
+Simple Answer is web site that people go and ask coding questions and get answer for their questions. In order to ask or answer questions user must log in first. Question can have a many asnwers. On the main page user can see how many answers have been posted. Also user can edit the question and asnwer.  
 
 ## Scresnshots
 
-<img src="" alt="">
+![Imgur](./imagesScreen/mainpage.png)
 
-![Simple Answer](
-    url
-)
+![Imgur](./imagesScreen/answerpage.png)
+
+
+
 
 ## Technologies Used
 
@@ -23,10 +24,11 @@ description
 2. Start server
 3. Open browser
 
-[Deployed Link](url) <br>
-[Trello Planning Board](url)
+[Deployed Link](https://simple-answers.herokuapp.com/users) <br>
+[Trello Planning Board](https://trello.com/b/3fQ3Yygp/simple-answer)
 
 ## Next Step
 
-- Create need by American Airlines 
-- Add button
+- I want to add live chat that also can ask questions and answer them
+- Add like button
+- Aslo only the user of the question can edit the question and answer
